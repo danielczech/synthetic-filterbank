@@ -32,11 +32,11 @@ def load_config(filename):
 
 
 def gen_dataset(frame, signal, n, output):
-    """Generate dataset of filterbank files containing tesht signals.
+    """Generate dataset of filterbank files containing test signals.
     """
     for i in range(n):
         signal_params = gen_params(signal)
-        gen_fil(frame, signal_params, i)
+        gen_fil(frame, signal_params, i, output)
 
 
 def gen_params(param_ranges):
@@ -59,7 +59,7 @@ def gen_params(param_ranges):
     return signal_params
 
 
-def gen_fil(frame_params, signal_params, n):
+def gen_fil(frame_params, signal_params, n, output):
     """Generate and save a single filterbank file.
     """
     frame = stg.Frame(
@@ -81,10 +81,12 @@ def gen_fil(frame_params, signal_params, n):
         width=signal_params['width']*u.Hz,
         f_profile_type=signal_params['type']
     )
-    frame.save_fil(f'synthetic_{n}.fil')
+    frame.save_fil(os.path.join(output, f'synthetic_{n}.fil'))
 
 
 def main(config, output, n_files):
+    """Generate the dataset.
+    """
     if output is None:
         output = os.getcwd()
     frame, signal = load_config(config)
