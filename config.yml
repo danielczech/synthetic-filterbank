@@ -6,20 +6,20 @@ frame:
   tchans: 25
   df: 1.59442 # in Hz
   dt: 5.01749 # in seconds
-  fch1: 6095
+  fch1: 1200
   noise_type: 'gaussian' # can be 'gaussian', 'normal' or 'chi2'
   noise_mean: 10
-  noise_std: 2
+  noise_std: 1
 
 # Parameter ranges for injected drifting signals:
 # Note: a variety of signal parameters are available in addition
 # to the basics provided here. See 
 # https://setigen.readthedocs.io/en/main/basics.html for further details.
 signal:
-  drift_min: 0.1 # in Hz/s
-  drift_max: 5 # in Hz/s
-  level_min: 40 
-  level_max: 50
-  width_min: 5 # in Hz
+  drift_min: -50 # in Hz/s
+  drift_max: 50 # in Hz/s
+  level_min: 20
+  level_max: 100
+  width_min: 1 # in Hz
   width_max: 10 # in Hz
-  type: 'box' # can be 'box', 'gaussian', 'sinc2', 'lorentzian' or 'voigt'
+  type: 'gaussian' # can be 'box', 'gaussian', 'sinc2', 'lorentzian' or 'voigt'
