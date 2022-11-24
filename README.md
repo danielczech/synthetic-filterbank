@@ -3,10 +3,11 @@
 Generate a set of synthetic filterbank files containing narrowband drifting 
 signals, using setigen (see https://setigen.readthedocs.io)  
 
-Edit general frame parameters and signal characteristics in `config.yml`.  
+General frame parameters and signal characteristics can be specified in 
+`config.yml`.  
 
-Signal characteristics are drawn from a uniform distribution of values between
- the min and max values set in `config.yml`.
+Injected signal characteristics are drawn from a uniform distribution of 
+values between the min and max values set in `config.yml`.
 
 ```
 usage: generate_data.py [options]
