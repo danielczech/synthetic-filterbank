@@ -19,6 +19,7 @@ except ImportError:
     print('Setigen (https://setigen.readthedocs.io/en/main/) is required')
     sys.exit()
 
+SHOW_PLOTS = True
 
 def load_config(filename):
     """load config file for general frame characteristics. 
@@ -74,15 +75,20 @@ def gen_fil(frame_params, signal_params, n, output):
         x_std=frame_params['noise_std'], 
         noise_type=frame_params['noise_type']
     )
+    start_chan = random.uniform(0, frame_params['fchans'])
+    print(f'Starting channel number: {start_chan}')
     frame.add_constant_signal(
-        f_start=frame.get_frequency(200),
+        f_start=frame.get_frequency(start_chan),
         drift_rate=signal_params['drift']*u.Hz/u.s,
         level=frame.get_intensity(snr=signal_params['level']),
         width=signal_params['width']*u.Hz,
         f_profile_type=signal_params['type']
     )
     frame.save_fil(os.path.join(output, f'synthetic_{n}.fil'))
-
+    if SHOW_PLOTS:
+        fig = plt.figure(figsize=(10, 6))
+        frame.plot()
+        plt.show()
 
 def main(config, output, n_files):
     """Generate the dataset.
