@@ -1,0 +1,25 @@
+# Configuration for dataset creation
+
+# Parameters of filterbank files to be produced:
+frame:
+  fchans: 1024
+  tchans: 32
+  df: 2.79
+  dt: 18.25
+  fch1: 6095
+  noise_type: 'gaussian' # can be 'gaussian', 'normal' or 'chi2'
+  noise_mean: 10
+  noise_std: 2
+
+# Parameter ranges for injected drifting signals:
+# Note: a variety of signal parameters are available in addition
+# to the basics provided here. See 
+# https://setigen.readthedocs.io/en/main/basics.html for further details.
+signal:
+  drift_min: 0.1 # in Hz/s
+  drift_max: 5 # in Hz/s
+  level_min: 40 
+  level_max: 50
+  width_min: 5 # in Hz
+  width_max: 10 # in Hz
+  type: 'box' # can be 'box', 'gaussian', 'sinc2', 'lorentzian' or 'voigt'
