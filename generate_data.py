@@ -19,7 +19,7 @@ except ImportError:
     print('Setigen (https://setigen.readthedocs.io/en/main/) is required')
     sys.exit()
 
-SHOW_PLOTS = True
+SHOW_PLOTS = False
 
 def load_config(filename):
     """load config file for general frame characteristics. 
