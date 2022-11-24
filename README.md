@@ -1,7 +1,8 @@
 ## synthetic-filterbank
 
 Generate a set of synthetic filterbank files containing narrowband drifting 
-signals, using setigen (see https://setigen.readthedocs.io)  
+signals, using setigen (see https://setigen.readthedocs.io and 
+https://github.com/bbrzycki/setigen).
 
 General frame parameters and signal characteristics can be specified in 
 `config.yml`.  
