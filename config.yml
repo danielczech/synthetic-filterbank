@@ -1,11 +1,11 @@
-# Configuration for dataset creation
+# Configuration for synthetic dataset creation
 
 # Parameters of filterbank files to be produced:
 frame:
-  fchans: 1024
-  tchans: 32
-  df: 2.79
-  dt: 18.25
+  fchans: 524288
+  tchans: 25
+  df: 1.59442 # in Hz
+  dt: 5.01749 # in seconds
   fch1: 6095
   noise_type: 'gaussian' # can be 'gaussian', 'normal' or 'chi2'
   noise_mean: 10
