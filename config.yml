@@ -7,7 +7,7 @@ frame:
   df: 1.59442 # in Hz
   dt: 5.01749 # in seconds
   fch1: 1200
-  noise_type: 'gaussian' # can be 'gaussian', 'normal' or 'chi2'
+  noise_type: 'chi2' # can be 'gaussian', 'normal' or 'chi2'
   noise_mean: 10
   noise_std: 1
 
