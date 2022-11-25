@@ -75,7 +75,7 @@ def gen_fil(frame_params, signal_params, n, output):
         x_std=frame_params['noise_std'], 
         noise_type=frame_params['noise_type']
     )
-    start_chan = random.uniform(0, frame_params['fchans'])
+    start_chan = int(random.uniform(0, frame_params['fchans']))
     print(f'Starting channel number: {start_chan}')
     frame.add_constant_signal(
         f_start=frame.get_frequency(start_chan),
